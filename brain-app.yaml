@@ -1,0 +1,42 @@
+# Today: brain-app manifest
+# Your day in one view. Reads calendar, unread mail and open tasks; the brain ranks them.
+# Reads only: it never sends mail or changes the calendar.
+# Created: 2026-10-22
+
+dialect: brain-app/v1
+id: today
+name: Today
+version: 0.1.0
+description: "Your day in one view: calendar, unread mail and open tasks, ranked by what matters from what your brain remembers."
+license: AGPL-3.0
+
+author:
+  name: hbar
+  url: https://hbar.systems
+  contact: hello@hbar.systems
+
+repo: https://github.com/hbar-systems/brain-app-today
+
+tab:
+  label: Today
+  route: /today
+  order: 30
+
+entries:
+  ui_bundle: ./
+
+permissions:
+  - calendar.read
+  - email.read
+  - tasks.read
+  - tasks.write
+  - llm.invoke
+
+requires_layers:
+  - layer: semantic
+    mode: read
+  - layer: episodic
+    mode: read
+
+engines:
+  brainfoundry-nous: ">=0.13.0"

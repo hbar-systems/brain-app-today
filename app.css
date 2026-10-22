@@ -1,0 +1,27 @@
+/* Today: app styles. Created 2026-10-22. Tokens only. */
+.today-sec { margin-top: 30px; }
+.today-sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.today-why { margin: 4px 0 0; color: var(--text-dim); font-size: 14px; }
+.today-tags { display: flex; gap: 6px; align-items: center; margin-bottom: 4px; flex-wrap: wrap; }
+.today-actions { margin-top: 8px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.today-ask { margin-top: 10px; width: 100%; }
+.today-ask .bf-prose { margin-top: 10px; font-size: 14.5px; }
+.today-check {
+  appearance: none; flex: none; width: 20px; height: 20px; margin-top: 2px; padding: 0; cursor: pointer;
+  border-radius: 6px; border: 1.5px solid var(--border); background: transparent; position: relative;
+  transition: border-color .15s var(--ease), background .15s var(--ease);
+}
+.today-check:hover { border-color: var(--accent-line); }
+.today-check:focus-visible { outline: 2px solid var(--accent-line); outline-offset: 2px; }
+.today-check[aria-checked="true"] { background: var(--accent-soft); border-color: var(--accent-line); }
+.today-check[aria-checked="true"]::after {
+  content: ""; position: absolute; left: 5px; top: 1px; width: 5px; height: 10px;
+  border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(40deg);
+}
+.today-check.busy { opacity: .5; pointer-events: none; }
+.bf-item.done .bf-item-title { text-decoration: line-through; color: var(--muted); }
+.today-add { display: flex; gap: 8px; margin-top: 12px; align-items: center; }
+.today-add .bf-input { flex: 1; min-width: 0; }
+.today-foot { margin-top: 40px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.today-line { margin: 10px 0 0; font-size: 13px; color: var(--muted); }
+.today-summary { margin-top: 4px; }
